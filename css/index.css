@@ -1,3 +1,26 @@
+/* Telas modo claro e escuro */
+:root {
+  --cor-fundo-2: #ffffff;
+  --cor-texto: #000000;
+  --cor-texto-2: #c6c6c6;
+  --cor-fundo-1: #f7f7f7;
+  --cor-detalhe: #ee2211;
+  --cor-hover-botao: #900000;
+  --onda: url(/imagens/onda-ligthmode.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo-1: #111111;
+    --cor-fundo-2: #000000;
+    --cor-texto: #ffffff;
+    --cor-texto-2: #414141;
+    --cor-detalhe: #ee2211;
+    --cor-hover-botao: #900000;
+    --onda: url(/imagens/onda-darkmode.svg);
+  }
+}
+
 /* estilo do header */
 
 .cabecalho {
@@ -19,17 +42,17 @@
   text-decoration: none;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
-  background-color: #ffffff;
-  border: 0.125rem solid #ffffff;
+  background-color: var(--cor-fundo-2);
+  border: 0.125rem solid var(--cor-fundo-2);
 }
 
 .lista-menu li a {
   text-decoration: none;
-  color: #000000;
+  color: var(--cor-texto);
 }
 
 .lista-menu li:hover {
-  border: 0.125rem solid #ee2211;
+  border: 0.125rem solid var(--cor-detalhe);
 }
 
 /* estilo do main */
@@ -45,14 +68,14 @@
   content: "";
   width: 3.75rem;
   height: 0.25rem;
-  background-color: #ee2211;
+  background-color: var(--cor-detalhe);
   position: absolute;
   top: 1.875rem;
   right: -1.875rem;
 }
 
 .introducao {
-  background-color: #ffffff;
+  background-color: var(--cor-fundo-2);
   display: grid;
   gap: 1.25rem;
   text-align: right;
@@ -64,15 +87,15 @@
 
 .introducao a {
   text-decoration: none;
-  color: #ffffff;
-  background-color: #ee2211;
+  color: var(--cor-texto);
+  background-color: var(--cor-detalhe);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   text-transform: uppercase;
 }
 
 .introducao a:hover {
-  background-color: #900;
+  background-color: var(--cor-hover-botao);
 }
 
 .bike {
@@ -88,17 +111,17 @@
 
 h2 {
   font-size: 4rem;
-  color: #c6c6c6;
+  color: var(--cor-texto-2);
   text-transform: uppercase;
   text-align: right;
   align-self: center;
   padding: 2.5rem;
-  background-image: url(/imagens/onda.svg);
+  background-image: var(--onda);
 }
 
 .vantagens {
   list-style: none;
-  background-color: #ffffff;
+  background-color: var(--cor-fundo-2);
   margin: 0%;
   padding: 2.5rem;
 }
@@ -116,27 +139,28 @@ h2 {
 }
 
 .vantagens li:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--cor-fundo-1);
 }
 
 .vantagens-itens:hover {
-  border-color: #ee2211;
+  border-color: var(--cor-detalhe);
 }
 
 /* estilos do footer */
 
 .rodape {
-  background-color: #ffffff;
+  background-color: var(--cor-fundo-2);
   width: 100%;
   padding: 2.5rem;
   text-align: center;
   box-sizing: border-box;
+  color: var(--cor-texto);
 }
 
 /* configurações gerais */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f7f7f7;
+  background: var(--cor-fundo-1);
   display: grid;
   gap: 3.75rem;
   justify-items: center;
@@ -146,6 +170,7 @@ body {
 
 main {
   max-width: 1000px;
+  color: var(--cor-texto);
 }
 
 h1 {
